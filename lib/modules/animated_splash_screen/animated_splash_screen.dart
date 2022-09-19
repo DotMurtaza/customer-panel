@@ -25,8 +25,8 @@ class _SplashScreenState extends State<AnimatedSplashScreen>
   }
 
   void navigationPage() {
-    Get.offAll(() => MapScreen());
-    // Get.offAll(() => RootCustomer());
+    // Get.offAll(() => MapScreen());
+    Get.offAll(() => RootCustomer());
     // Navigator.of(context).pushReplacementNamed(RouteNames.signInScreen);
   }
 

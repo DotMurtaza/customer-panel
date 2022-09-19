@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:foodbari_deliver_app/Controllers/request_controller.dart';
+import 'package:foodbari_deliver_app/map_screen.dart';
 import 'package:foodbari_deliver_app/modules/authentication/controller/customer_controller.dart';
 import 'package:foodbari_deliver_app/modules/order/model/my_product_model.dart';
 import 'package:foodbari_deliver_app/modules/order/product_controller/product_controller.dart';
@@ -572,6 +573,33 @@ class _HomeScreenState extends State<HomeScreen> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .normal),
+                                                            ),
+                                                            const SizedBox(
+                                                                height: 20),
+                                                            Row(
+                                                              children: [
+                                                                Text(
+                                                                    'See on map'),
+                                                                IconButton(
+                                                                  onPressed:
+                                                                      () {
+                                                                    Get.to(() => MapScreen(
+                                                                        destinationLat: orderController
+                                                                            .customerModel
+                                                                            .value!
+                                                                            .rider_location!
+                                                                            .latitude,
+                                                                        destinationLng: orderController
+                                                                            .customerModel
+                                                                            .value!
+                                                                            .rider_location!
+                                                                            .longitude));
+                                                                  },
+                                                                  icon: Icon(
+                                                                      Icons
+                                                                          .map),
+                                                                ),
+                                                              ],
                                                             ),
                                                             const SizedBox(
                                                                 height: 20),
